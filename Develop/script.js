@@ -1,17 +1,22 @@
-// When Generate Password button is clicked,
-// prompt user:
+// When Generate Password button is clicked:
+//    *** add event listener on button
 
+// prompt user:
+//    *** window.prompt/confirm:
 // how long? (between 8 and 128 characters)
 // include lowercase?
 // include uppercase?
 // include numeric?
+//    *** list all letters and numbers
 // include special characters?
+//    *** look up charset="UTF-8", list all special characters
+//    ***    " !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
 
-// validate input, must include 1 of the above 
+// validate input, must include 1 of the above
 
-// Randomize order displayed
+// Randomize order variables are displayed
 
-// display generated password in textbox
+// display generated password in textbox after all prompts are answered
 
 
 // Get references to the #generate element
