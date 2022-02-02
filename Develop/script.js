@@ -8,7 +8,7 @@
 // include uppercase?
 // include numeric?
 //    *** list all letters and numbers
-// include special characters?
+// include symbols?
 //    *** look up charset="UTF-8", list all special characters
 //    ***    " !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
 
@@ -23,31 +23,51 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-
-  var length = prompt("Choose a password length between 8 and 128 characters")
-  prompt("Choose a password length between 8 and 128 characters");
-  confirm("include lowercase letters?");
-  confirm("include uppercase letters?");
-  confirm("include numbers?");
-  confirm("include special characters?");
-
-
-
+  
   document.getElementById("password").innerHTML=length;
-  // var password = generatePassword();
-  // var passwordText = document.querySelector("#password");
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-  // passwordText.value = password;
+  passwordText.value = password;
 
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+var length = prompt("Choose a password length between 8 and 128 characters")
+var includeLower = confirm("include lowercase letters?");
+var includeUpper = confirm("include uppercase letters?");
+var includeNumber = confirm("include numbers?");
+var includeSymbol = confirm("include special characters?");
+  
+if (!includeLower && !includeUpper && !includeNumbers && !includeSymbols) {
+  return "Please select at least one option"
+}
+  else{
+    var counter = 0;
+    var password = '';
 
-  
-  
-  
+    while (counter < length) {
+      if (includeLower && counter <= length){
+        password += getRandLower()
+        counter ++
+      }
+      if (includeUpper && counter <= length){
+        password += getRandUpper()
+        counter ++
+      }
+      if (includeNumber && counter <= length){
+        password += getRandNumber()
+        counter ++
+      }
+      if (includeSymbol && counter <= length){
+        password += getRandSymbol()
+        counter ++
+      }
+    }
+  }
+
   
 
 function getRandLower(){
