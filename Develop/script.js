@@ -39,7 +39,8 @@ function generatePassword() {
 
   var length = parseInt(prompt("Choose a password length between 8 and 128 characters"));
 
-  if (length < 8 || length > 128) {
+  // if (length < 8 || length > 128) {
+    if (length < 8 || length > 128 || typeof length === 'string') {
     return "Please enter a valid number";
   }
   else {
@@ -72,6 +73,9 @@ function generatePassword() {
           password += getRandSymbol()
           counter++
         }
+
+        // add randomizer here 
+        
       }
       return password
     }
